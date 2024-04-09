@@ -1,6 +1,6 @@
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { TokenInfo } from "@uniswap/token-lists";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import useDebouncedString from "../hooks/useDebouncedString";
 import useSearchResults from "../hooks/useSearchResults";
@@ -29,6 +29,12 @@ export default function TokenListSearch({ chainId, url, onClickToken }: Props) {
         getScrollElement: () => listRef.current,
         overscan: 10
     });
+
+    useEffect(() => {
+        if (virtualizer.getTotalSize() > 0) {
+            virtualizer.scrollToIndex(0);
+        }
+    }, [debouncedQuery]);
 
     const listHeight = virtualizer.getTotalSize() < 5 * rowHeight
         ? `${Math.max(virtualizer.getTotalSize(), rowHeight) + 2}px`

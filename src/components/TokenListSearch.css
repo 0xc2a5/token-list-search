@@ -1,0 +1,98 @@
+.TokenListSearch {
+    background-color: var(--input-background-color);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: grid;
+    font-size: 0.9rem;
+    max-width: 500px;
+    position: relative;
+    width: 100%;
+
+    &:has(input:enabled) {
+        &:hover {
+            border-color: var(--border-hover-color);
+        }
+
+        &:focus-within {
+            border-color: var(--border-focus-color);
+        }
+    }
+
+    & .Search {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        font-size: inherit;
+        padding: 1rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            opacity: var(--input-placeholder-opacity);
+        }
+    }
+
+    & .List {
+        background-color: var(--input-background-color);
+        border: 1px solid var(--border-focus-color);
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        height: 200px;
+        margin-top: 3.6rem;
+        overflow-y: scroll;
+        position: absolute;
+        visibility: visible;
+        width: 100%;
+
+        &.hidden {
+            visibility: hidden;
+        }
+
+        & .NoResults {
+            display: inline-block;
+            opacity: var(--input-placeholder-opacity);
+            padding: 1rem;
+        }
+
+        & .Item {
+            background-color: transparent;
+            border: none;
+            color: inherit;
+            display: flex;
+            font-size: inherit;
+            gap: 0.6rem;
+            place-items: center;
+            text-align: left;
+            user-select: text;
+
+            &:hover {
+                background-color: var(--selection-hover-background-color);
+            }
+
+            &:focus {
+                background-color: var(--selection-focus-background-color);
+            }
+
+            & .Logo {
+                aspect-ratio: 1;
+                border: 1px solid var(--border-focus-color);
+                border-radius: 100%;
+                width: 2.2rem;
+                margin-left: 0.4rem;
+            }
+
+            & .Name {
+                font-weight: bold;
+            }
+
+            & .Address,
+            & .Symbol {
+                font-size: 0.74rem;
+                opacity: var(--input-placeholder-opacity);
+            }
+        }
+    }
+}

@@ -1,4 +1,3 @@
-import { useState } from "react"
 import TokenListSearch from "./components/TokenListSearch"
 import { TokenInfo } from "@uniswap/token-lists";
 

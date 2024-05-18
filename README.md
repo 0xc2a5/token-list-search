@@ -1,8 +1,8 @@
 # Demo
 
-https://github.com/0xc2a5/token-list-search/assets/155046752/80c88eac-925b-4f73-b61c-135f06d3c35b
+https://github.com/0xc2a5/token-list-search/assets/155046752/d7056af4-edc3-4925-a685-d1d338b2a032
 
-https://github.com/0xc2a5/token-list-search/assets/155046752/cbf70d02-9820-4f67-b699-02ff8fea08b0
+https://github.com/0xc2a5/token-list-search/assets/155046752/97d048e5-9d1c-46fc-b335-8acb84827386
 
 # React + TypeScript + Vite
 

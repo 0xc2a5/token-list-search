@@ -111,6 +111,12 @@ export default function TokenListSearch({ chainId, url, onClickToken }: Props) {
                             {virtualizer.getVirtualItems().map(item => {
                                 const token = results[item.index];
                                 const { address, logoURI, name, symbol } = token
+                                let logo = logoURI
+
+                                if (logoURI?.startsWith(import.meta.env.VITE_COINGECKO_LOGO_URI)) {
+                                    logo = logoURI.replace("/thumb/", "/large/")
+                                }
+
                                 return (
                                     <button
                                         className="Item"
@@ -124,7 +130,7 @@ export default function TokenListSearch({ chainId, url, onClickToken }: Props) {
                                             width: "100%"
                                         }}
                                     >
-                                        <img className="Logo" src={logoURI} />
+                                        <img className="Logo" src={logo} />
                                         <div>
                                             <span className="Name">{name}</span>
                                             {" "}
